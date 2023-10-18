@@ -1,11 +1,10 @@
-<div class="card" style="width: 15rem;">
-  <img [src]="book?.image" class="card-img-top">
+<div class="card" style="width: 15rem; margin: 1rem 0;"  >
+  <img [src]="book!.image" class="card-img-top" style="max-height: 20rem">
   <div class="card-body">
-    <h5 class="card-title">{{book?.title}}</h5>
-    <p class="card-text">{{book?.author}}</p>
-    <p class="card-text">Rs.{{ book?.price?.value}}</p>
-    <button (click)="addToCart(book!)" class="btn btn-primary" >
-       Add to Cart
-    </button>
+    <h5 class="card-title" style="min-height: 4rem;">{{book!.title}}</h5>
+    <p class="card-text" style="max-height: 14rem; overflow: hidden;">{{book!.summary}}</p>
+    <p class="card-text">{{book!.author}}</p>
+    <p class="card-text"><b>${{book!.price!.value}}</b></p>
+    <button class="btn btn-primary" (click)="addToCart(book!)">Add to Cart</button>
   </div>
-</div>
+</div> 
